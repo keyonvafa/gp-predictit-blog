@@ -59,7 +59,7 @@ neg_log_marginal_likelihood = function(params,x,y){
   noise_scale = exp(params[4])
   mean_param = params[5]
   K_xx = cov_matrix(params,x,x) + noise_scale*diag(length(x))
-  return(-1*dmvnorm(y,mean = rep(mean_param,length(y)), sigma = K_xx,log=TRUE)) # change to 0
+  return(-1*dmvnorm(y,mean = rep(mean_param,length(y)), sigma = K_xx,log=TRUE))
 }
 
 # Make predictions
